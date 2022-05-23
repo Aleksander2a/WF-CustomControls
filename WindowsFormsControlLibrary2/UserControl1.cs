@@ -178,7 +178,9 @@ namespace WindowsFormsControlLibrary2
                 DATE = date;
                 TIME = time;
 
-                TriedToAddValidEvent(e);
+                UpdateDb(e);
+                //TriedToAddValidEvent(e);
+                
             }
         }
 
@@ -318,6 +320,16 @@ namespace WindowsFormsControlLibrary2
             handler?.Invoke(this, e);
         }
         /// /// ///
+        /// /// /// /// 
+        //To create the event
+        public event EventHandler FillDb;
+
+        protected virtual void FillDB(EventArgs e)
+        {
+            EventHandler handler = FillDb;
+            handler?.Invoke(this, e);
+        }
+        /// /// ///
 
         private void Delete_button_Click(object sender, EventArgs e)
         {
@@ -336,11 +348,26 @@ namespace WindowsFormsControlLibrary2
                     if (CurrentEvents[i].Date == Date_textBox.Text && CurrentEvents[i].Time == Time_textBox.Text)
                     {
                         CurrentEvents.RemoveAt(i);
-                        ClearDB(e);
+                        UpdateDb(e);
                         return;
                     }
                 }
             }
+        }
+
+        private void UpdateDb(EventArgs e)
+        {
+            ClearDB(e);
+            foreach (var ev in CurrentEvents)
+            {
+                EVENT_NAME = ev.EventName;
+                PRIORITY = ev.Priority;
+                DESCRIPTION = ev.Description;
+                DATE = ev.Date;
+                TIME = ev.Time;
+                FillDB(e);
+            }
+            //FillWeekWithCurrentEvents();
         }
     }
 }

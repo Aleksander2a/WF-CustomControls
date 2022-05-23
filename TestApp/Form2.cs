@@ -52,16 +52,29 @@ namespace TestApp
             string date = userControl11.DATE;
             string time = userControl11.TIME;
             string userName = userControl11.UserName;
-            EventManagement.AddEventToDB(eventName, description, priority, date, time, userName);
-            MessageBox.Show("Changes saved");
+            //EventManagement.AddEventToDB(eventName, description, priority, date, time, userName);
+            //MessageBox.Show("Changes saved");
             return;
 
         }
 
         private void userControl11_DeleteEvent(object sender, EventArgs e)
         {
-            MessageBox.Show("Event deleted");
+            EventManagement.ClearAllEventsForUser(LoggedUser.UserName);
+            //MessageBox.Show("Event deleted");
             return;
+        }
+
+        private void userControl11_FillDb(object sender, EventArgs e)
+        {
+            string eventName = userControl11.EVENT_NAME;
+            string description = userControl11.DESCRIPTION;
+            string priority = userControl11.PRIORITY;
+            string date = userControl11.DATE;
+            string time = userControl11.TIME;
+            string userName = userControl11.UserName;
+            MessageBox.Show("Changes saved");
+            EventManagement.AddEventToDB(eventName, description, priority, date, time, userName);
         }
 
         //public void FillCeWithData()

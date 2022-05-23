@@ -46,6 +46,7 @@
             this.userControl11.TriedAddInvalid += new System.EventHandler(this.userControl11_TriedAddInvalid);
             this.userControl11.TriedAddValid += new System.EventHandler(this.userControl11_TriedAddValid);
             this.userControl11.DeleteEvent += new System.EventHandler(this.userControl11_DeleteEvent);
+            this.userControl11.FillDb += new System.EventHandler(this.userControl11_FillDb);
             // 
             // Form2
             // 
