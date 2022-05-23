@@ -22,9 +22,6 @@ namespace TestApp
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'controlsAppDBDataSet.Events' . Możesz go przenieść lub usunąć.
-            //this.eventsTableAdapter.Fill(this.controlsAppDBDataSet.Events);
-
             userControl11.UserName = LoggedUser.UserName;
 
             List<Event> events = EventManagement.GetAllEventsForUserName(LoggedUser.UserName);
@@ -46,24 +43,13 @@ namespace TestApp
 
         private void userControl11_TriedAddValid(object sender, EventArgs e)
         {
-            /*
-            string eventName = userControl11.EVENT_NAME;
-            string description = userControl11.DESCRIPTION;
-            string priority = userControl11.PRIORITY;
-            string date = userControl11.DATE;
-            string time = userControl11.TIME;
-            string userName = userControl11.UserName;
-            */
-            //EventManagement.AddEventToDB(eventName, description, priority, date, time, userName);
             MessageBox.Show("Changes saved");
             return;
-
         }
 
         private void userControl11_DeleteEvent(object sender, EventArgs e)
         {
             EventManagement.ClearAllEventsForUser(LoggedUser.UserName);
-            //MessageBox.Show("Event deleted");
             return;
         }
 
@@ -75,10 +61,7 @@ namespace TestApp
             string date = userControl11.DATE;
             string time = userControl11.TIME;
             string userName = userControl11.UserName;
-            //MessageBox.Show("Changes saved");
             EventManagement.AddEventToDB(eventName, description, priority, date, time, userName);
         }
-
-        //public void FillCeWithData()
     }
 }

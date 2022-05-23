@@ -14,6 +14,5 @@ namespace WindowsFormsControlLibrary2
         public string Date { get; set; } // PK
         public string Time { get; set; } // PK
         public string UserName { get; set; } // User PK
-        //public User User { get; set; } // User reference
     }
 }

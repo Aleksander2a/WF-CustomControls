@@ -24,13 +24,6 @@ namespace WindowsFormsControlLibrary1
 
         public PasswordValidator_UserControl()
         {
-            /*
-            MIN_CHARACTERS = minChars;
-            MIN_SPECIAL_CHARACTERS = minSpecialChars;
-            MIN_CAPITTAL_LETTERS = minCaptLett;
-            MIN_DIGITS = minDigits;
-            SPECIAL_CHARACTERS_LIST = specCharsList;
-            */
             InitializeComponent();
         }
 
@@ -67,8 +60,6 @@ namespace WindowsFormsControlLibrary1
             CapitalLettersCount_label.Visible = true;
             Digits_label.Visible = true;
             DigitsCount_label.Visible = true;
-            //NoWhiteSpaces_label.Visible = true;
-            //NoWsValue_label.Visible = true;
             PassConfPasslabel.Visible = true;
 
             string password = Password_textBox.Text;
@@ -144,19 +135,16 @@ namespace WindowsFormsControlLibrary1
                 if (nrOfWhitespaces > 0)
                 {
                     NoWhiteSpaces_label.ForeColor = Color.Red;
-                    //NoWsValue_label.ForeColor = Color.Red;
                 }
                 else
                 {
                     NoWhiteSpaces_label.ForeColor = Color.Green;
-                    //NoWsValue_label.ForeColor = Color.Green;
                     countOfSuccess++;
                 }
             }
             else
             {
                 NoWhiteSpaces_label.ForeColor = Color.Green;
-                //NoWsValue_label.ForeColor = Color.Green;
                 countOfSuccess++;
             }
 
@@ -216,8 +204,6 @@ namespace WindowsFormsControlLibrary1
             CapitalLettersCount_label.Visible = true;
             Digits_label.Visible = true;
             DigitsCount_label.Visible = true;
-            //NoWhiteSpaces_label.Visible = true;
-            //NoWsValue_label.Visible = true;
             PassConfPasslabel.Visible = true;
             if (NO_WHITESPACES)
             {

@@ -26,10 +26,6 @@ namespace WindowsFormsControlLibrary2
         public string TIME { get; set; }
 
 
-        //public DataSet DataSet { get; set; }
-        //public DefaultBindingPropertyAttribute DefaultBindingProperty { get; set; }
-        //public BindingSource BindingSource { get; set; }
-
         public string UserName { get; set; }
         private List<CurrentEvent> CurrentEvents { get; set; }
 
@@ -78,7 +74,6 @@ namespace WindowsFormsControlLibrary2
             {
                 Week_dataGridView.Rows.Add(endTime.ToString());
                 endTime = endTime.Add(ts);
-                //endTime = DateTime.Now.AddMinutes(i * 30);
             }
         }
         private void Week_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -158,7 +153,6 @@ namespace WindowsFormsControlLibrary2
                 if (currentEvent != null)
                 {
                     CurrentEvents.Remove(currentEvent);
-                    // throw event on deleting event !!!!!!!!!
                 }
                 AddEventToCurrentEvents(eventName, description, priority, date, time, UserName);
                 // find selected row index
@@ -180,7 +174,6 @@ namespace WindowsFormsControlLibrary2
 
                 UpdateDb(e);
                 TriedToAddValidEvent(e);
-                
             }
         }
 
@@ -301,17 +294,6 @@ namespace WindowsFormsControlLibrary2
 
         /// /// /// 
         //To create the event
-        public event EventHandler EventDeleted;
-
-        protected virtual void DeletedEvent(EventArgs e)
-        {
-            EventHandler handler = EventDeleted;
-            handler?.Invoke(this, e);
-        }
-        /// /// /// 
-        /// 
-        /// /// /// 
-        //To create the event
         public event EventHandler DeleteEvent;
 
         protected virtual void ClearDB(EventArgs e)
@@ -368,7 +350,6 @@ namespace WindowsFormsControlLibrary2
                 TIME = ev.Time;
                 FillDB(e);
             }
-            //FillWeekWithCurrentEvents();
         }
     }
 }

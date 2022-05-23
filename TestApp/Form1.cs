@@ -76,5 +76,10 @@ namespace TestApp
             Form form3 = new Form3();
             form3.ShowDialog();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

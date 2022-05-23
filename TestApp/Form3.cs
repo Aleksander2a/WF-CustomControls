@@ -62,5 +62,10 @@ namespace TestApp
             }
             
         }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

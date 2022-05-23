@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.Register_button = new System.Windows.Forms.Button();
-            this.passwordValidator_UserControl1 = new WindowsFormsControlLibrary1.PasswordValidator_UserControl();
             this.UserName_textBox = new System.Windows.Forms.TextBox();
             this.UserName_label = new System.Windows.Forms.Label();
             this.Menu_button = new System.Windows.Forms.Button();
             this.Login_button = new System.Windows.Forms.Button();
+            this.passwordValidator_UserControl1 = new WindowsFormsControlLibrary1.PasswordValidator_UserControl();
             this.SuspendLayout();
             // 
             // Register_button
@@ -48,22 +48,6 @@
             this.Register_button.Text = "Register";
             this.Register_button.UseVisualStyleBackColor = false;
             this.Register_button.Click += new System.EventHandler(this.Register_button_Click);
-            // 
-            // passwordValidator_UserControl1
-            // 
-            this.passwordValidator_UserControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordValidator_UserControl1.Location = new System.Drawing.Point(261, 64);
-            this.passwordValidator_UserControl1.MIN_CAPITTAL_LETTERS = 0;
-            this.passwordValidator_UserControl1.MIN_CHARACTERS = 0;
-            this.passwordValidator_UserControl1.MIN_DIGITS = 0;
-            this.passwordValidator_UserControl1.MIN_SPECIAL_CHARACTERS = 0;
-            this.passwordValidator_UserControl1.Name = "passwordValidator_UserControl1";
-            this.passwordValidator_UserControl1.NO_WHITESPACES = false;
-            this.passwordValidator_UserControl1.Size = new System.Drawing.Size(276, 366);
-            this.passwordValidator_UserControl1.SPECIAL_CHARACTERS_LIST = null;
-            this.passwordValidator_UserControl1.TabIndex = 2;
-            this.passwordValidator_UserControl1.StateToValid += new System.EventHandler(this.passwordValidator_UserControl1_StateToValid);
-            this.passwordValidator_UserControl1.StateToInValid += new System.EventHandler(this.passwordValidator_UserControl1_StateToInValid);
             // 
             // UserName_textBox
             // 
@@ -108,6 +92,23 @@
             this.Login_button.UseVisualStyleBackColor = false;
             this.Login_button.Click += new System.EventHandler(this.Login_button_Click);
             // 
+            // passwordValidator_UserControl1
+            // 
+            this.passwordValidator_UserControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordValidator_UserControl1.Location = new System.Drawing.Point(261, 64);
+            this.passwordValidator_UserControl1.MIN_CAPITTAL_LETTERS = 0;
+            this.passwordValidator_UserControl1.MIN_CHARACTERS = 0;
+            this.passwordValidator_UserControl1.MIN_DIGITS = 0;
+            this.passwordValidator_UserControl1.MIN_SPECIAL_CHARACTERS = 0;
+            this.passwordValidator_UserControl1.Name = "passwordValidator_UserControl1";
+            this.passwordValidator_UserControl1.NO_WHITESPACES = false;
+            this.passwordValidator_UserControl1.PASSWORD = null;
+            this.passwordValidator_UserControl1.Size = new System.Drawing.Size(276, 366);
+            this.passwordValidator_UserControl1.SPECIAL_CHARACTERS_LIST = null;
+            this.passwordValidator_UserControl1.TabIndex = 2;
+            this.passwordValidator_UserControl1.StateToValid += new System.EventHandler(this.passwordValidator_UserControl1_StateToValid);
+            this.passwordValidator_UserControl1.StateToInValid += new System.EventHandler(this.passwordValidator_UserControl1_StateToInValid);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -121,6 +122,7 @@
             this.Controls.Add(this.Register_button);
             this.Name = "Form1";
             this.Text = "Register";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
