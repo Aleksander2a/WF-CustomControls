@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsControlLibrary2
 {
-    public class CurrentEvent
+    internal class CurrentEvent
     {
         public string EventName { get; set; }
         public string Description { get; set; }

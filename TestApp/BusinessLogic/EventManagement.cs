@@ -47,6 +47,14 @@ namespace TestApp.BusinessLogic
             dbContext.SaveChanges();
         }
 
-        //public static bool 
+        public static void ClearAllEventsForUser(string username)
+        {
+            var dbContext = new TestApp.Data.AppContext();
+            var events = (from e in dbContext.Events
+                          where e.UserName == username
+                          select e).ToList();
+            dbContext.Events.RemoveRange(events);
+            dbContext.SaveChanges();
+        }
     }
 }

@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.userControl11 = new WindowsFormsControlLibrary2.UserControl1();
             this.SuspendLayout();
             // 
             // userControl11
             // 
-            //this.userControl11.DataSet = null;
             this.userControl11.DATE = null;
-            //this.userControl11.DefaultBindingProperty = null;
             this.userControl11.DESCRIPTION = null;
             this.userControl11.EVENT_NAME = null;
             this.userControl11.Location = new System.Drawing.Point(1, 3);
@@ -49,7 +45,7 @@
             this.userControl11.UserName = null;
             this.userControl11.TriedAddInvalid += new System.EventHandler(this.userControl11_TriedAddInvalid);
             this.userControl11.TriedAddValid += new System.EventHandler(this.userControl11_TriedAddValid);
-            //this.userControl11.EventDeleted += new System.EventHandler(this.userControl11_EventDeleted);
+            this.userControl11.DeleteEvent += new System.EventHandler(this.userControl11_DeleteEvent);
             // 
             // Form2
             // 

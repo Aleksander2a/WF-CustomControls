@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace WindowsFormsControlLibrary2
 {
     public partial class UserControl1: UserControl
@@ -32,7 +31,7 @@ namespace WindowsFormsControlLibrary2
         //public BindingSource BindingSource { get; set; }
 
         public string UserName { get; set; }
-        public List<CurrentEvent> CurrentEvents { get; set; }
+        private List<CurrentEvent> CurrentEvents { get; set; }
 
 
         public UserControl1()
@@ -159,6 +158,7 @@ namespace WindowsFormsControlLibrary2
                 if (currentEvent != null)
                 {
                     CurrentEvents.Remove(currentEvent);
+                    // throw event on deleting event !!!!!!!!!
                 }
                 AddEventToCurrentEvents(eventName, description, priority, date, time, UserName);
                 // find selected row index
@@ -195,7 +195,7 @@ namespace WindowsFormsControlLibrary2
             FillWeekWithCurrentEvents();
         }
 
-        public CurrentEvent FindEventByDateTime(string date, string time)
+        private CurrentEvent FindEventByDateTime(string date, string time)
         {
             foreach (CurrentEvent currentEvent in CurrentEvents)
             {
@@ -307,6 +307,17 @@ namespace WindowsFormsControlLibrary2
             handler?.Invoke(this, e);
         }
         /// /// /// 
+        /// 
+        /// /// /// 
+        //To create the event
+        public event EventHandler DeleteEvent;
+
+        protected virtual void ClearDB(EventArgs e)
+        {
+            EventHandler handler = DeleteEvent;
+            handler?.Invoke(this, e);
+        }
+        /// /// ///
 
         private void Delete_button_Click(object sender, EventArgs e)
         {
@@ -325,7 +336,7 @@ namespace WindowsFormsControlLibrary2
                     if (CurrentEvents[i].Date == Date_textBox.Text && CurrentEvents[i].Time == Time_textBox.Text)
                     {
                         CurrentEvents.RemoveAt(i);
-                        DeletedEvent(e);
+                        ClearDB(e);
                         return;
                     }
                 }

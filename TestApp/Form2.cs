@@ -58,6 +58,12 @@ namespace TestApp
 
         }
 
+        private void userControl11_DeleteEvent(object sender, EventArgs e)
+        {
+            MessageBox.Show("Event deleted");
+            return;
+        }
+
         //public void FillCeWithData()
     }
 }
