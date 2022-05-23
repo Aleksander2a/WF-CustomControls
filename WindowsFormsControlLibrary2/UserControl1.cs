@@ -179,7 +179,7 @@ namespace WindowsFormsControlLibrary2
                 TIME = time;
 
                 UpdateDb(e);
-                //TriedToAddValidEvent(e);
+                TriedToAddValidEvent(e);
                 
             }
         }
@@ -349,6 +349,7 @@ namespace WindowsFormsControlLibrary2
                     {
                         CurrentEvents.RemoveAt(i);
                         UpdateDb(e);
+                        TriedToAddValidEvent(e);
                         return;
                     }
                 }
